@@ -1,0 +1,196 @@
+<html>
+<img>
+</img>
+
+<head>
+
+
+<h1> CALCULADORA DE AUMENTOS DE TRANSPORTE PUBLICO </h1>
+<h2> <i> Estima tus gastos para los proximos meses </i> </h2>
+<style>
+ body {
+	background-color:#0C2B77
+ }
+ 
+ h1
+ {
+	color:white
+ }
+ 
+ h1 {
+	text-align:center
+	}
+
+ h2 {
+	color:white	
+ }
+ 
+h2 {
+	text-align:center
+ }
+ 
+ h3 {
+	color:white
+ }
+ 
+h3 {
+	text-align:center	
+ }
+ 
+ a {
+ color:white
+ 
+ }
+ 
+ a {
+ 
+  text-align:center
+ 
+ }
+ 
+ label {
+ color:white
+ }
+ 
+ 
+ form {
+    
+    display: block;
+    padding: 10pxx;
+    text-align:center;
+    border:1px solid black;
+    margin:0 auto;
+}
+
+button { 
+	align:center
+	
+	
+	}
+
+div { 
+
+	text-align:center
+
+ }
+ 
+ div { 
+
+	color:white
+
+ }
+ 
+ 
+</style>
+</head>
+
+
+
+<br> </br>
+
+<br> </br>
+<body>
+
+<form name="subte">
+<h3> Cantidad de Subtes que utilizas por dia para viajar a la Faculad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)" />
+<br> </br>
+<h3> Gasto proyectado para el mes de Marzo con aumento, $550 </h3>
+<input id="numero1" name="res" type="text" value=""/>
+</form> <br> </br>
+
+<form name="cole">
+<h3> Cantidad de Colectivos que utilizas por dia para viajar a la Faculad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)" />
+<br> </br>
+<h3> Gasto proyectado para el mes de Marzo con aumento, $800 </h3>
+<input id="numero2" name="res" type="text" value=""/>
+</form> <br> </br>
+
+<form name="tren">
+<h3> Cantidad de Trenes que utilizas por dia para viajar a la Faculad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)"/>
+<br> </br>
+<h3> Gasto proyectado para el mes de Marzo con aumento, $600 </h3>
+<input id="numero3" name="res" type="text" value=""/>
+</form> <br></br>
+
+<h3>Gasto proyectado para el mes de Marzo con aumento por dia, ida y vuelta</h3>
+
+  <button onclick="sumar()">Sumar</button>
+  <div id="suma"></div> <br></br>
+  <script>
+    function sumar() {
+      var numero1 = parseFloat(document.getElementById('numero1').value);
+      var numero2 = parseFloat(document.getElementById('numero2').value);
+      var numero3 = parseFloat(document.getElementById('numero3').value);
+	  
+      var resultado1 = numero1 + numero2 + numero3;
+      
+      document.getElementById('suma').innerText = 'La suma es: ' + resultado1 * 2;
+    }
+  </script>
+
+<form name="dias">
+<h3> Cantidad de dias a la semana que cursas en la Facultad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)"/>
+<br> </br>
+<h3> Gasto proyectado para Marzo con aumento en la totalidad del mes </h3>
+<input name="res" type="text" value=""/>
+</form> <br></br>
+
+
+
+<script language="javascript">
+
+	function multiplica(form){
+		var x=0;
+		var y = 600 ;
+		var z = 800 ;
+		var h = 550 ;
+		
+		var numero1 = parseFloat(document.getElementById('numero1').value);
+		var numero2 = parseFloat(document.getElementById('numero2').value);
+		var numero3 = parseFloat(document.getElementById('numero3').value);
+	  
+		var resultado1 = numero1 + numero2 + numero3;
+		
+		x = parseFloat (cole.num.value);
+		resultado = x * z;
+		cole.res.value=resultado; 
+		
+		x = parseFloat (tren.num.value);
+		resultado = x * y;
+		tren.res.value=resultado; 
+		
+		x = parseFloat (subte.num.value);
+		resultado = x * h;
+		subte.res.value=resultado; 
+		
+		x = parseFloat (dias.num.value);
+		resultado = x * resultado1 * 4;
+		dias.res.value=resultado;
+		
+		}
+
+</script>	
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<i> <a href="https://www.lacampora.org/2015/07/07/los-jovenes-seguimos-haciendo-historia-boleto-estudiantil-gratuito-en-bs-as/"> Conce nuestro proyecto de Ley para un Boleto Estudiantil </a> </i>
+
+<br>
+</br>
+
+<i> <a href="https://www.lanacion.com.ar/economia/cuanto-cuesta-el-boleto-de-colectivo-y-tren-tras-el-aumento-de-febrero-2024-nid06022024/"> Fuentes </a> </i>
+
+
+</body>
+
+
+
+
+
+</style>
+</html>
