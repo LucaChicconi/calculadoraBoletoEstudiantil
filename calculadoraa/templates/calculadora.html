@@ -79,7 +79,19 @@ div {
 	color:white
 
  }
- 
+.container {
+  height: 10px;
+  position: relative;
+  border: 0px solid green;
+}
+.center{
+	margin : 0;
+	position: absolute;
+	left : 50%;
+	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+}
+
  
 </style>
 </head>
@@ -117,7 +129,12 @@ div {
 
 <h3>Gasto proyectado para el mes de Marzo con aumento por dia, ida y vuelta</h3>
 
-  <button onclick="sumar()">Sumar</button>
+<div class="container">
+	<div class="center">
+	  <button onclick = "sumar()">Sumar</button>
+	</div>
+  </div> 
+
   <div id="suma"></div> <br></br>
   <script>
     function sumar() {
@@ -145,9 +162,9 @@ div {
 
 	function multiplica(form){
 		var x=0;
-		var y = 600 ;
-		var z = 800 ;
-		var h = 550 ;
+		var y = 600 ; //trenes
+		var z = 800 ; //bondis
+		var h = 550 ; //subte
 		
 		var numero1 = parseFloat(document.getElementById('numero1').value);
 		var numero2 = parseFloat(document.getElementById('numero2').value);
