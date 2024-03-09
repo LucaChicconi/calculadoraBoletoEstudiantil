@@ -1,0 +1,125 @@
+{%extends 'index.html'%}
+{% csrf_token %}
+<head>
+    <style>
+        body {
+           background-color:#0C2B77
+        }
+        
+        h1
+        {
+           color:white
+        }
+        
+        h1 {
+           text-align:center
+           }
+       
+        h2 {
+           color:white	
+        }
+        
+       h2 {
+           text-align:center
+        }
+        
+        h3 {
+           color:white
+        }
+        
+       h3 {
+           text-align:center	
+        }
+        
+        a {
+        color:white
+        
+        }
+        
+        a {
+        
+         text-align:center
+        
+        }
+        
+        label {
+        color:white
+        }
+        
+        
+        form {
+           
+           display: block;
+           padding: 10pxx;
+           text-align:center;
+           border:1px solid black;
+           margin:0 auto;
+       }
+       
+       button { 
+           align:center
+           
+           
+           }
+       
+       div { 
+       
+           text-align:center
+       
+        }
+        
+        div { 
+       
+           color:white
+       
+        }
+       .container {
+         height: 10px;
+         position: relative;
+         border: 0px solid green;
+       }
+       .center{
+           margin : 0;
+           position: absolute;
+           left : 50%;
+           -ms-transform: translate(-50%, -50%);
+             transform: translate(-50%, -50%);
+       }
+       
+        
+       </style>
+</head>
+{% block titulo %}¿Cómo llegas a la facu?{% endblock titulo %}
+{% block cuerpo %}<h1>Contanos, ¿Cómo hacés para llegar a la facu?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    {%if dias != 0%}
+        {% if costo_total_bondis%}
+            <div>Los viajes en colectivo te van a costar: {{ costo_total_bondis }}</div>
+        {% endif %}
+
+        {% if costo_total_subtes%}
+            <div>Los viajes en subte te van a costar: {{ costo_total_subtes }}</div>
+        {% endif %}
+
+        {% if costo_total_trenes %}
+            <div>Los viajes en tren te van a costar: {{ costo_total_trenes }}</div>
+        {% endif %}
+
+        {% if costo_total %}
+            <div>Lo cual da un total de: {{ costo_total }} por mes</div>
+        {% endif %}
+
+    {%endif%}
+    {%if dias == 0%}
+        <div>Algo salió mal, volvé a la página anterior y corroborá que estén todas las casillas completas y que cantidad días no sea 0</div>
+    {%endif%}
+
+
+{% endblock cuerpo %}
