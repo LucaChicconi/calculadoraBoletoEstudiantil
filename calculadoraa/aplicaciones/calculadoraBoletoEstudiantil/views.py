@@ -35,12 +35,12 @@ def crear_estudiante(request):
             
             estudiante.costo_mensual = costo_mensual*2 * dias_por_mes
             if estudiante.cantidad_dias != 0:
-                estudiante.save()
+                estudiante.save()   
            
             # Guardar en la base de datos si es necesario
             # Esto puede variar dependiendo de tus modelos
             
-            return render(request, 'crearEstudiante.html', {'dias':dias_por_mes,'costo_total': estudiante.costo_mensual,'costo_total_bondis':total_bondis_mes,'costo_total_subtes': total_subte_mes , 'costo_total_trenes':total_trenes_mes})
+            return render(request, 'mostrarResultados.html', {'dias':dias_por_mes,'costo_total': estudiante.costo_mensual,'costo_total_bondis':total_bondis_mes,'costo_total_subtes': total_subte_mes , 'costo_total_trenes':total_trenes_mes})
     else:
         form = EstudianteForm()
 

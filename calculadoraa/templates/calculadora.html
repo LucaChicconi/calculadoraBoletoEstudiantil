@@ -135,7 +135,27 @@ div {
 	</div>
   </div> 
 
-  <div id="suma"></div> <br></br>
+  <div id="suma"></div> <br></br><table>
+	<thread>
+		<tr>
+			<th>id</th>
+			<th>Cantidad de Bondis</th>
+			<th>Cantidad de Subtes</th>
+			<th>Cantidad de Trenes</th>
+		</tr>
+	</thread>
+	<tbody>
+		{%for estudiante in estudiantes %}
+		<tr>
+			<td>{{estudiante.id}}</td>
+			<td>{{estudiante.cantidadBondis}}</td>
+			<td>{{estudiante.cantidadSubtes}}</td>
+			<td>{{estudiante.cantidadTrenes}}</td>
+		</tr>
+		{%endfor%}
+		
+	</tbody>
+</table>
   <script>
     function sumar() {
       var numero1 = parseFloat(document.getElementById('numero1').value);

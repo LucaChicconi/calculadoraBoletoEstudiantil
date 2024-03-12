@@ -89,30 +89,24 @@
         
        </style>
 </head>
-{% block titulo %}¿Cómo llegas a la facu?{% endblock titulo %}
-{% block cuerpo %}<h1>Contanos, ¿Cómo hacés para llegar a la facu?</h1>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" onclick="location.href = 'mostrarResultados';" id="verResultados" class="float-left submit-button" >Ver resultados</button>
-    </form>
+{% block titulo %}¿Cuánto te va a costar ir a la facu en marzo?{% endblock titulo %}
+{% block cuerpo %}
 
     {%if dias != 0%}
         {% if costo_total_bondis%}
-            <div>Los viajes en colectivo te van a costar: {{ costo_total_bondis }}</div>
+            <div>Los viajes en colectivo te van a costar: $ {{ costo_total_bondis }}</div>
         {% endif %}
 
         {% if costo_total_subtes%}
-            <div>Los viajes en subte te van a costar: {{ costo_total_subtes }}</div>
+            <div>Los viajes en subte te van a costar: $ {{ costo_total_subtes }}</div>
         {% endif %}
 
         {% if costo_total_trenes %}
-            <div>Los viajes en tren te van a costar: {{ costo_total_trenes }}</div>
+            <div>Los viajes en tren te van a costar: $ {{ costo_total_trenes }}</div>
         {% endif %}
 
         {% if costo_total %}
-            <div>Lo cual da un total de: {{ costo_total }} por mes</div>
+            <div>Lo cual da un total de: $ {{ costo_total }} por mes</div>
         {% endif %}
         <br></br>
         <i class="center"> <a href="https://www.lacampora.org/2015/07/07/los-jovenes-seguimos-haciendo-historia-boleto-estudiantil-gratuito-en-bs-as/"> Conce nuestro proyecto de Ley para un Boleto Estudiantil </a> </i>
