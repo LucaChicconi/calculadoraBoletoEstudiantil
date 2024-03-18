@@ -74,7 +74,9 @@
        
         }
        .container {
-         height: 10px;
+         display: grid;
+         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+         grid-gap: 10px;
          position: relative;
          border: 0px solid green;
        }
@@ -100,24 +102,24 @@
 
     {%if dias != 0%}
         {% if costo_total_bondis%}
-            <div>Los viajes en colectivo te van a costar: {{ costo_total_bondis }}</div>
+            <div class="container">Los viajes en colectivo te van a costar: {{ costo_total_bondis }}</div>
         {% endif %}
 
         {% if costo_total_subtes%}
-            <div>Los viajes en subte te van a costar: {{ costo_total_subtes }}</div>
+            <div class="container">Los viajes en subte te van a costar: {{ costo_total_subtes }}</div>
         {% endif %}
 
         {% if costo_total_trenes %}
-            <div>Los viajes en tren te van a costar: {{ costo_total_trenes }}</div>
+            <div class="container">Los viajes en tren te van a costar: {{ costo_total_trenes }}</div>
         {% endif %}
 
         {% if costo_total %}
-            <div>Lo cual da un total de: {{ costo_total }} por mes</div>
+            <div class="container">Lo cual da un total de: {{ costo_total }} por mes</div>
         {% endif %}
         <br></br>
-        <i class="center"> <a href="https://www.lacampora.org/2015/07/07/los-jovenes-seguimos-haciendo-historia-boleto-estudiantil-gratuito-en-bs-as/"> Conce nuestro proyecto de Ley para un Boleto Estudiantil </a> </i>
+        <div class="container"> <a href="https://www.lacampora.org/2015/07/07/los-jovenes-seguimos-haciendo-historia-boleto-estudiantil-gratuito-en-bs-as/"> Conce nuestro proyecto de Ley para un Boleto Estudiantil </a> </div>
         <br></br>
-        <i class="center"> <a href="https://www.lanacion.com.ar/economia/cuanto-cuesta-el-boleto-de-colectivo-y-tren-tras-el-aumento-de-febrero-2024-nid06022024/"> Fuentes </a> </i>
+        <div class="container"> <a href="https://www.lanacion.com.ar/economia/cuanto-cuesta-el-boleto-de-colectivo-y-tren-tras-el-aumento-de-febrero-2024-nid06022024/"> Fuentes </a> </div>
 
     {%endif%}
     {%if dias == 0%}
