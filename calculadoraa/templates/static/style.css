@@ -1,0 +1,259 @@
+
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+ 
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+ body {
+	background-color:#2e4180;
+    font-family: "Bebas Neue", sans-serif;
+ }
+ 
+
+ .button_slide {
+    color:#2e4180;
+    background-color: #FFF;
+    border: 2px solid#2e4180;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 rgb(255, 196, 4);
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
+  
+  .slide_right:hover {
+    box-shadow: inset 700px 0 0 0 rgb(255, 196, 4);
+  }
+
+  
+  #outer {
+    width: 364px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+  }
+ 
+ h1
+ {
+	color:#2e4180;
+    font-size:50px;
+    letter-spacing: 2px;
+    text-align:center;
+    text-shadow: -2px 2px 0px rgb(255, 196, 4);	
+font-size: 50px;
+line-height: 50px;
+ }
+ 
+
+ h2 {
+	color:#2e4180;
+    text-align:center
+ }
+ 
+
+ h3 {
+	color:#000000;
+    font-family: "Roboto", sans-serif;
+    text-align:center;
+    margin-top: 15px;
+ 
+ }
+ 
+ 
+#id_cantidad_dias{
+  color:black;
+}
+ 
+ form {
+    color:#000000;
+    display: block;
+    padding: 10px;
+    text-align:center;
+    border:1px solid black;
+    margin:0 auto;
+}
+  
+
+ 
+ .divindex{
+    position : absolute;
+    top : 8%; left : 8%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    background-color: #FFF;
+    width: 85%;
+    height:85%;
+    border-radius: 10px;
+   
+}
+
+.divtexto{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 100%;
+    color: black
+   
+}
+
+
+.divtexto2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    color: black;
+   
+}
+
+.divtexto3{
+    position: absolute;
+    top: 55%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 60%;
+    color: black;
+}
+
+.divimg{
+    position: absolute;
+    top: 47%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 80%;
+   
+}
+
+.divcalculadora{
+    position : absolute;
+    top : 10%; left : 8%; 
+    justify-content : center;
+    align-items : center;
+    background-color: #FFF;
+    width: 85%;
+    height: 160%;
+    border-radius: 10px;
+}
+
+.divestudiante{
+    position : absolute;
+    top : 8%; left : 8%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    background-color: #000000;
+    width: 85%;
+    height:85%;
+    border-radius: 10px;
+   
+}
+
+.error{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 10%;
+    text-align: center;
+    margin-top: 55px;
+   
+}
+
+
+
+.bodyfondo {
+background-image: url(./img/fondo_index.jpg);
+background-size:16%;
+background-repeat: repeat;
+background-position: 50% 15px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+  }
+  
+  a:link {
+    color: #2e4180;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #2e4180;
+    text-decoration: none;
+  }
+  
+   
+  a:active {
+    background: rgb(255, 196, 4);
+  
+    text-decoration: none;
+  }
+  
+
+  form {
+   color:black;
+   border: none;
+   margin: 0;
+  }
+
+  input{
+
+        border-radius: 5px;
+        background-color: #2e4180;
+         border-color: #2e4180;
+        color: #FFF;
+        width:  20%;
+         text-align: center;
+  }
+
+  .center{
+margin-left: 45%;
+  }
+
+  .piedepagina{
+   
+padding-bottom: 50px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  #suma{
+font-size: 30px;
+margin-left: 45%;
+padding-top: 10px;
+
+  }
+
+
+  .guardar{
+    font-size: 30px;
+    margin-left: 35%;
+    padding-top: 10px;
+    
+      }
+p{
+  color:#000000;
+  font-size : 25px;
+}

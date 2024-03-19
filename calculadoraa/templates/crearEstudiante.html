@@ -1,130 +1,64 @@
-{%extends 'index.html'%}
-{% csrf_token %}
-<head>
-    <style>
-        body {
-           background-color:#0C2B77
-        }
-        
-        h1
-        {
-           color:white
-        }
-        
-        h1 {
-           text-align:center
-           }
-       
-        h2 {
-           color:white	
-        }
-        
-       h2 {
-           text-align:center
-        }
-        
-        h3 {
-           color:white
-        }
-        
-       h3 {
-           text-align:center	
-        }
-        
-        a {
-        color:white
-        
-        }
-        
-        a {
-        
-         text-align:center
-        
-        }
-        
-        label {
-        color:white
-        }
-        
-        
-        form {
-           
-           display: block;
-           padding: 10pxx;
-           text-align:center;
-           border:1px solid black;
-           margin:0 auto;
-       }
-       
-       button { 
-           align:center
-           
-           
-           }
-       
-       div { 
-       
-           text-align:center
-       
-        }
-        
-        div { 
-       
-           color:white
-       
-        }
-       .container {
-         display: grid;
-         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-         grid-gap: 10px;
-         position: relative;
-         border: 0px solid green;
-       }
-       .center{
-           margin : 0;
-           position: absolute;
-           left : 50%;
-           -ms-transform: translate(-50%, -50%);
-             transform: translate(-50%, -50%);
-       }
-       
-        
-       </style>
-</head>
-{% block titulo %}¿Cómo llegas a la facu?{% endblock titulo %}
-{% block cuerpo %}<h1>Contanos, ¿Cómo hacés para llegar a la facu?</h1>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" onclick="location.href = 'mostrarResultados';" id="verResultados" class="float-left submit-button" >Ver resultados</button>
-    </form>
-
-    {%if dias != 0%}
-        {% if costo_total_bondis%}
-            <div class="container">Los viajes en colectivo te van a costar: {{ costo_total_bondis }}</div>
-        {% endif %}
-
-        {% if costo_total_subtes%}
-            <div class="container">Los viajes en subte te van a costar: {{ costo_total_subtes }}</div>
-        {% endif %}
-
-        {% if costo_total_trenes %}
-            <div class="container">Los viajes en tren te van a costar: {{ costo_total_trenes }}</div>
-        {% endif %}
-
-        {% if costo_total %}
-            <div class="container">Lo cual da un total de: {{ costo_total }} por mes</div>
-        {% endif %}
-        <br></br>
-        <div class="container"> <a href="https://www.lacampora.org/2015/07/07/los-jovenes-seguimos-haciendo-historia-boleto-estudiantil-gratuito-en-bs-as/"> Conce nuestro proyecto de Ley para un Boleto Estudiantil </a> </div>
-        <br></br>
-        <div class="container"> <a href="https://www.lanacion.com.ar/economia/cuanto-cuesta-el-boleto-de-colectivo-y-tren-tras-el-aumento-de-febrero-2024-nid06022024/"> Fuentes </a> </div>
-
-    {%endif%}
-    {%if dias == 0%}
-        <div>Algo salió mal, volvé a la página anterior y corroborá que estén todas las casillas completas y que cantidad días no sea 0</div>
-    {%endif%}
+{% extends 'index.html' %}
+{% block body %} 
+    <div class="divestudiante">
+        <div class="divtexto2">
+            <h1>Contanos, ¿Cómo hacés para llegar a la facu?</h1>
+        </div>
+        <div class="divtexto3">
+            <form method="post">
+                {% csrf_token %}
+                {%if not estudiante%}
+                <h2>Cantidad de colectivos</h2>
+                <div class="form-group">
+                    {{ form.cantidad_bondis }}
+                </div>
+                <h2>Cantidad de trenes</h2>
+                <div class="form-group">
+                    {{ form.cantidad_trenes }}
+                </div>
+                <h2>Cantidad de subtes</h2>
+                <div class="form-group">
+                    {{ form.cantidad_subtes }}
+                </div>
+                <h2>Cantidad de días:</h2>
+                <div class="form-group">
+                    {{ form.cantidad_dias }}
+                </div>
+                <br></br>
+                <button type="submit" class="button_slide slide_right">Guardar</button>
+                {%endif%}
+            </form>
+            {% if dias == 0 %}
+                <div class="error">Algo salió mal, volvé a la página anterior y corroborá que estén todas las casillas completas y que cantidad días no sea 0</div>
+            {% endif %}
+            {% if estudiante %}
+                <div class="resultados">
+                    <h2>Esto vas a gastar por mes</h2>
+                {%if costo_total_bondis%}
+                <p> En colectivos : ${{ costo_total_bondis }}</p>
+                {%endif%}
+                {%if costo_total_trenes%}
+                <p> En trenes : ${{ costo_total_trenes }}</p>
+                {%endif%}
+                {%if costo_total_subtes%}
+                <p> En subte : ${{ costo_total_subtes }}</p>
+                {%endif%}
+                {%if costo_total%}
+                <p> En total : ${{ costo_total }}</p>
+                {%endif%}
+                {% if image_base64 %}
+                    <div class="grafico">
+                        <img src="data:image/png;base64,{{ image_base64 }}" alt="Grafico de comparación">
+                    </div>
+                {% endif %}
+            {%endif%}
+            </div>
+        </div>
+    </div>
+{% endblock body %}
 
 
-{% endblock cuerpo %}
+
+
+
+   

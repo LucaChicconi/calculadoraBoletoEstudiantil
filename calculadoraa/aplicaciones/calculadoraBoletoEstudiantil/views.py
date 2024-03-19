@@ -67,6 +67,7 @@ def crear_estudiante(request):
 
 
             contexto = {
+            'estudiante': estudiante,
             'costo_total': estudiante.costo_mensual,
             'costo_diciembre_anterior': estudiante.costo_mensual_diciembre,
             'image_base64': image_base64,
@@ -76,8 +77,9 @@ def crear_estudiante(request):
             'costo_total_trenes':total_trenes_mes,
         }   
 
-            
-            return render(request, 'mostrarResultados.html', contexto)
+            response = render(request, 'crearEstudiante.html', contexto)
+            response['Content-Type'] = 'text/html'  # Tipo MIME para HTML
+            return response
     else:
         form = EstudianteForm()
 

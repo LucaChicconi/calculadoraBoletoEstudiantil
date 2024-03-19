@@ -21,6 +21,6 @@ from aplicaciones.calculadoraBoletoEstudiantil.views import inicio,dashboard,cre
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', dashboard, name = 'dashboard'),
-    path('crearEstudiante/',crear_estudiante, name='crearEstudiante'),
+    path('crearEstudiante/',crear_estudiante, name='crearEstudiante')
 
 ]
