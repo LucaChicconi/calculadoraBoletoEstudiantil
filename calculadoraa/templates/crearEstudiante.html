@@ -35,23 +35,20 @@
                 <div class="resultados">
                     <h2>Esto vas a gastar por mes</h2>
                 {%if costo_total_bondis%}
-                <p> En colectivos : ${{ costo_total_bondis }}</p>
+                <h3> En colectivos : ${{ costo_total_bondis }}</h3>
                 {%endif%}
                 {%if costo_total_trenes%}
-                <p> En trenes : ${{ costo_total_trenes }}</p>
+                <h3> En trenes : ${{ costo_total_trenes }}</h3>
                 {%endif%}
                 {%if costo_total_subtes%}
-                <p> En subte : ${{ costo_total_subtes }}</p>
+                <h3> En subte : ${{ costo_total_subtes }}</h3>
                 {%endif%}
                 {%if costo_total%}
-                <p> En total : ${{ costo_total }}</p>
+                <h3> En total : ${{ costo_total }}</h3>
                 {%endif%}
-                {% if image_base64 %}
-                    <div class="grafico">
-                        <img src="data:image/png;base64,{{ image_base64 }}" alt="Grafico de comparación">
-                    </div>
-                {% endif %}
             {%endif%}
+            <h1>Firmá por el Boleto Educativo en la Ciudad de Buenos Aires</h1>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcS7orlZOscgb15Q-gVzq4iiu-J-kwmwL5cE8I5lVtUh9hAw/viewform">  <div class="button_slide slide_right">Firmá acá</div></a>
             </div>
         </div>
     </div>
